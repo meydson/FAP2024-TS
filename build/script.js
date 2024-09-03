@@ -26,12 +26,11 @@ class Pessoa {
         console.log(`${this.nome} morreu com ${this.idade}`);
     }
 }
-let pessoas = [];
+let pessoa = new Pessoa("Kurt Cobain", 0, true);
 function teste() {
-    console.log(pessoas);
+    console.log(pessoa);
 }
 function nascer() {
-    pessoas.push("Kurt Cobain", 0, true);
     pessoa.nascer();
 }
 function crescer() {
