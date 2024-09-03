@@ -1,53 +1,43 @@
+"use strict";
 function display() {
-    console.log("Welcome TS")
+    console.log("Welcome TS");
 }
-
-display()
-
+display();
 class Pessoa {
-    nome: string;
-    idade: number;
-    estaVivo: boolean;
-
-    constructor(nome: string, idade: number, estaVivo: boolean) {
+    constructor(nome, idade, estaVivo) {
         this.nome = nome;
         this.idade = idade;
         this.estaVivo = estaVivo;
     }
-
-    nascer(): void {
-        console.log(`${this.nome} nasceu!`)
+    nascer() {
+        console.log(`${this.nome} nasceu!`);
     }
-
-    crescer(): void {
+    crescer() {
         if (this.estaVivo) {
             this.idade++;
             console.log(`${this.nome} fez ${this.idade} anos!`);
-        } else {
+        }
+        else {
             console.log(`${this.nome} morreu com ${this.idade} anos`);
         }
     }
-
-    morrer(): void {
+    morrer() {
         this.estaVivo = false;
         console.log(`${this.nome} morreu com ${this.idade}`);
     }
 }
-
-let pessoa = new Pessoa("Kurt Cobain",0,true);
-
+let pessoas = [];
 function teste() {
-    console.log(pessoa);
+    console.log(pessoas);
 }
-
 function nascer() {
+    pessoas.push("Kurt Cobain", 0, true);
     pessoa.nascer();
 }
-
 function crescer() {
     pessoa.crescer();
 }
-
 function morrer() {
     pessoa.morrer();
 }
+//# sourceMappingURL=script.js.map
