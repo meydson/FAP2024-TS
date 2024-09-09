@@ -29,7 +29,7 @@ class ContaBanco {
     }
 
     saque(valor: number): void {
-        if (valor >= this._saldo) {
+        if (valor > this._saldo) {
             console.log("Saldo inferior ao valor informado para saque, transação não realizada");
         } else {
             this._saldo -= valor;

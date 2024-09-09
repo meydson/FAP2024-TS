@@ -21,7 +21,7 @@ var ContaBanco = /** @class */ (function () {
         }
     };
     ContaBanco.prototype.saque = function (valor) {
-        if (valor >= this._saldo) {
+        if (valor > this._saldo) {
             console.log("Saldo inferior ao valor informado para saque, transação não realizada");
         }
         else {
