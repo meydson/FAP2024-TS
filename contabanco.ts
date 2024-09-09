@@ -1,47 +1,47 @@
 class ContaBanco {
     public conta: number;
     public nome: string;
-    private saldo: number;
-    private limite: number;
+    private _saldo: number;
+    private _limite: number;
 
     constructor(conta: number, nome: string, saldo: number, limite: number) {
         this.conta = conta;
         this.nome = nome;
-        this.saldo = saldo;
-        this.limite = limite;
+        this._saldo = saldo;
+        this._limite = limite;
     }
 
     getSaldo(): void {
-        console.log(`O saldo da conta é de R$ ${this.saldo}`);
+        console.log(`O saldo da conta é de R$ ${this._saldo}`);
     }
 
     getLimite(): void {
-        console.log(`O limite de crédito da conta é de R$ ${this.limite}`);
+        console.log(`O limite de crédito da conta é de R$ ${this._limite}`);
     }
 
     deposito(valor: number): void {
         if (valor > 0) {
-            this.saldo += valor;
-            console.log(`O novo saldo é de R$ ${this.saldo}`);
+            this._saldo += valor;
+            console.log(`O novo saldo é de R$ ${this._saldo}`);
         } else {
             console.log("O valor para depósito informado é menor que zero!")
         }
     }
 
     saque(valor: number): void {
-        if (valor >= this.saldo) {
+        if (valor >= this._saldo) {
             console.log("Saldo inferior ao valor informado para saque, transação não realizada");
         } else {
-            this.saldo -= valor;
-            console.log(`O novo saldo é de R$ ${this.saldo}`);
+            this._saldo -= valor;
+            console.log(`O novo saldo é de R$ ${this._saldo}`);
         }
     }
 
     emprestimo(valor: number): void {
-        if (valor <= this.limite) {
-            this.limite -= valor;
-            this.saldo += valor;
-            console.log(`O valor do saldo após o empréstimo de R$ ${valor} é de ${this.saldo} e seu limite atual é de R$ ${this.limite}`);
+        if (valor <= this._limite) {
+            this._limite -= valor;
+            this._saldo += valor;
+            console.log(`O valor do saldo após o empréstimo de R$ ${valor} é de ${this._saldo} e seu limite atual é de R$ ${this._limite}`);
         } else {
             console.log("Limite indisponível para essa transação");
         }
