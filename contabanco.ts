@@ -29,7 +29,7 @@ class ContaBanco {
     }
 
     saque(valor: number): void {
-        if (valor > this.saldo) {
+        if (valor >= this.saldo) {
             console.log("Saldo inferior ao valor informado para saque, transação não realizada");
         } else {
             this.saldo -= valor;
@@ -38,7 +38,7 @@ class ContaBanco {
     }
 
     emprestimo(valor: number): void {
-        if (valor < this.limite) {
+        if (valor <= this.limite) {
             this.limite -= valor;
             this.saldo += valor;
             console.log(`O valor do saldo após o empréstimo de R$ ${valor} é de ${this.saldo} e seu limite atual é de R$ ${this.limite}`);
@@ -52,25 +52,4 @@ let conta1 = new ContaBanco(1,"Meydson",1000,1000);
 
 function exibirConta() {
     console.log(conta1);
-}
-
-function exibirSaldo() {
-    console.log(conta1.getSaldo());
-}
-
-function exibirLimite() {
-    console.log(conta1.getLimite());
-}
-
-function deposito() {
-    //let valor: number = parseInt(prompt("Informe o valor a ser depositado!"));
-    conta1.deposito(500);
-}
-
-function sacar() {
-    conta1.saque(200);
-}
-
-function emprestimo() {
-    conta1.emprestimo(500);
 }
