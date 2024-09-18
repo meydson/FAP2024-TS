@@ -14,7 +14,7 @@ class Bra implements Conta {
 
     constructor() {
         this.Numero = Bra.Controle;
-        Bra.Controle += Bra.Controle;
+        Bra.Controle += 1;
         this.Saldo = 1000;
     }
 
@@ -29,11 +29,11 @@ class Bra implements Conta {
 
     Depositar(valor: number) {
         if (valor > 1000) {
-            console.log("Valor informado para depósito excede o limite de R$ 1000!")
+            console.log("Valor informado para depósito excede o limite de R$ 1000!");
             return
         } else (valor > 0);
             this.Saldo += valor;
-            console.log(`O novo saldo é de R$ ${this.Saldo}`)
+            console.log(`O novo saldo é de R$ ${this.Saldo}`);
     }
 }
 
@@ -44,5 +44,9 @@ function ExibirConta() {
 }
 
 function ExibirSaldo() {
-    console.log(`O saldo atual da conta é de R$ ${novaBra.Saldo}`)
+    console.log(`O saldo atual da conta é de R$ ${novaBra.Saldo}`);
+}
+
+function ExibirControle() {
+    console.log(Bra.Controle);
 }

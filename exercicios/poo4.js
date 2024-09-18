@@ -1,7 +1,7 @@
 var Bra = /** @class */ (function () {
     function Bra() {
         this.Numero = Bra.Controle;
-        Bra.Controle += Bra.Controle;
+        Bra.Controle += 1;
         this.Saldo = 1000;
     }
     Bra.prototype.Sacar = function (valor) {
@@ -32,4 +32,7 @@ function ExibirConta() {
 }
 function ExibirSaldo() {
     console.log("O saldo atual da conta \u00E9 de R$ ".concat(novaBra.Saldo));
+}
+function ExibirControle() {
+    console.log(Bra.Controle);
 }
