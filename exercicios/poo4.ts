@@ -37,14 +37,19 @@ class Bra implements Conta {
     }
 }
 
-let novaBra = new Bra;
+let novaBra: object[] = [];
+
+
+function CriarConta() {
+    novaBra.push(new Bra);
+}
 
 function ExibirConta() {
     console.log(novaBra);
 }
 
 function ExibirSaldo() {
-    console.log(`O saldo atual da conta é de R$ ${novaBra.Saldo}`);
+    //console.log(`O saldo atual da conta é de R$ ${Bra[0].Saldo}`);
 }
 
 function ExibirControle() {

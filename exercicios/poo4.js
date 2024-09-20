@@ -26,12 +26,15 @@ var Bra = /** @class */ (function () {
     Bra.Controle = 0;
     return Bra;
 }());
-var novaBra = new Bra;
+var novaBra = [];
+function CriarConta() {
+    novaBra.push(new Bra);
+}
 function ExibirConta() {
     console.log(novaBra);
 }
 function ExibirSaldo() {
-    console.log("O saldo atual da conta \u00E9 de R$ ".concat(novaBra.Saldo));
+    //console.log(`O saldo atual da conta é de R$ ${Bra[0].Saldo}`);
 }
 function ExibirControle() {
     console.log(Bra.Controle);
