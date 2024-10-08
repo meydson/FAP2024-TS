@@ -7,7 +7,7 @@ class ContaBanco {
     constructor(conta: number, nome: string, saldo: number, limite: number) {
         this.conta = conta;
         this.nome = nome;
-        this._saldo = saldo;
+        this._saldo = saldo; 
         this._limite = limite;
     }
 
